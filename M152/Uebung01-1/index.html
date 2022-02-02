@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Name</h1>
+        <hr>
+        <div style="width: 100%; display: flex; flex-wrap: wrap;">
+            <div style="width: 400px;">
+                <ul>
+                    <li>Hobbies: </li>
+                    <li>Beruf: </li>
+                    <li>Alter: </li>
+                    <li>Wonort: </li>
+                </ul>
+            </div>
+            <div style="float: right; width: 140px; height: 140px;">
+                <img src="Unbenannt.PNG" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    body {
+        overflow: hidden;
+
+        background-image: url('giphy.gif');
+        background-repeat: repeat;
+    }
+
+    .card {
+        margin-left: 30%;
+        margin-top: 30vh;
+        width: 550px;
+        padding: 50px;
+        border-style: solid;
+        border-radius: 50px;
+        box-shadow: 10px 5px 5px black;
+
+        position: relative;
+
+        animation-name: example;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    img {
+        float: right;
+    }
+
+    @keyframes example {
+        0% {
+            background: red;
+            left: 0px;
+            top: 0px;
+            transform: rotate(0deg) scale(0.5);
+        }
+
+        25% {
+            background: yellow;
+            left: 0px;
+            top: 0px;
+        }
+
+        50% {
+            background: blue;
+            left: 0px;
+            top: 0px;
+            transform: rotate(180deg) scale(2);
+        }
+
+        75% {
+            background: green;
+            left: 0px;
+            top: 0px;
+
+        }
+
+        100% {
+            background: red;
+            left: 0px;
+            top: 0px;
+            transform: rotate(360deg) scale(0.5);
+        }
+    }
+</style>
