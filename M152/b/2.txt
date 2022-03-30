@@ -1,0 +1,6 @@
+Wireframe:
+    Wireframes sind schwarz, weisse Darstellungen, die sich auf die Funktionalität der Webseite fokusieren.
+    Diese werden als ersten Prototyp gebraucht.
+
+Mockups:
+    Mockups sind statische realistische Darstellungen wie die Webseite aussehen wird und wie durch diese navigiert werden kann.

@@ -8,6 +8,7 @@
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
+
 <body id="top">
   <!-- Top Background Image Wrapper -->
   <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
@@ -341,6 +342,12 @@
           <p>Als Fair Use bezeichnet man eine Rechtsdoktrin der Urheberrechtssysteme einiger Common-Law-Länder, die
             bestimmte, nicht autorisierte Nutzungen von geschütztem Material zugesteht, sofern sie der öffentlichen
             Bildung und der Anregung geistiger Produktionen dienen.</p>
+          <ul>
+            <li>Kota & Silvan</li>
+            <li>Musteradresse 12</li>
+            <li>webseite@info.ch</li>
+            <li>Rick Roll GMBH</li>
+          </ul>
           <div style="height: 100px;"></div>
         </div>
 
@@ -370,6 +377,213 @@
   <!-- End Bottom Background Image Wrapper -->
 
   <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+  <!-- Cookie Consent Screen -->
+  <div class="cookie_consent_container cookie_hide" id="cookie_consent_container">
+    <div class="cookie_consent_box">
+      <!-- Cookie Pop-Up-->
+      <div class="cookie_pop_up" id="cookie_pop_up">
+        <h2>Cookie Einstellungen</h2>
+        <p>Unsere Website sili.bplaced.ch setzt Cookies, JavaSricpt und HTML5 ein, die uns die Erhebung von
+          Informationen Ihres Gerätes ermöglichen. Cookies haben verschiedene Einsatzmöglichkeiten. Sie werden
+          verwendet, um die Website funktionsfähig zu machen, die Nutzung der Website zu
+          analysieren, das Teilen über Social Media zu ermöglichen, oder auch um
+          Werbung zu schalten. Wenn Sie auf „In Ordnung“ klicken, erteilen Sie uns Ihre Genehmigung, diese Cookies gemäß
+          unserer Cookie-Richtlinie auf Ihrem Gerät abzulegen. Wenn Sie
+          Ihre Einwilligung verweigern möchten, klicken Sie bitte unten auf den Link „Weitere Informationen“ und
+          deaktivieren Sie das Kästchen Ihrer Wahl. Sofern die erhobenen Informationen persönliche Daten enthalten,
+          verarbeiten wir diese Daten gemäß unserer Datenschutzerklärung.
+        </p>
+        <div class="cookie_pop_up_buttons">
+          <a class="cookie_more_info" id="cookies_more_info">Weitere Informationen</a>
+          <div class="service_button">
+            <a class="link_b1" id="accept_cookie_settings">
+              <div class="button_1">In Ordnung</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Cookie Settings-->
+      <div class="cookie_pop_up_settings cookie_hide" id="cookie_pop_up_settings">
+        <h2>Cookie Einstellungen</h2>
+        <!-- Cookie Type -->
+        <div class="cookie_type">
+          <div class="">
+            <div class="cookies_always_checked"></div>
+          </div>
+          <div class="cookie_type_text">
+            <h3>Funktionsrelevante Cookies</h3>
+            <p class="cookie_type_p">Diese Cookies sorgen dafür, dass alle Funktionen der Website genutzt werden können.
+              Sie speichern Ihre Auswahl und Ihre Einstellungen und optimieren somit Ihren Aufenthalt. Durch Sie können
+              wir gesetzliche Vorschriften einhalten und Ihnen die Website in Ihrer Sprache anzeigen.</p>
+          </div>
+        </div>
+        <!-- Cookie Type -->
+        <div class="cookie_type">
+          <div class="">
+            <input type="checkbox" class="cookie_checkbox" name="needed_cookies" value="" id="tracking_cookies"
+              onchange="validateTrackingCookies()" checked>
+          </div>
+          <div class="cookie_type_text">
+            <label for="tracking_cookies">Tracking Cookies</label>
+            <p class="cookie_type_p">Durch diese Cookies erhalten wir Informationen über Ihre Nutzung der Website. Diese
+              Infos helfen uns bei der Verbesserung unserer Website und unseres Angebots. Die Deaktivierung hat für Sie
+              als Nutzer keine Folgen. Weitere Informationen finden sie in unserer <a
+                href="https://mavorymedia.com/datenschutz">Datenschutzerklärung</a>.</p>
+          </div>
+        </div>
+        <div class="service_button">
+          <a class="link_b1" id="save_cookie_settings">
+            <div class="button_1">Speichern</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
+
+<script>
+  /**********************************************************/
+  /*                    Cookie Management                   */
+  /**********************************************************/
+
+  //Create Cookie
+  function createCookie(c_name, c_value, c_days) {
+    if (c_days) {
+      var c_date = new Date();
+      c_date.setTime(c_date.getTime() + (c_days * 24 * 60 * 60 * 1000));
+      var c_expires = "expires=" + c_date.toGMTString();
+    } else {
+      var c_expires = "";
+    }
+    document.cookie = c_name + '=' + c_value + ';' + c_expires + "; path=/";
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  function eraseCookie(name) {
+    createCookie(name, "", -1);
+  }
+
+  /**********************************************************/
+  /*                   Cookie Preferences                   */
+  /**********************************************************/
+
+  //Make First Settings
+  var cookiePreferences = readCookie('cookiePreferences');
+  var CookieConsentOverlay = document.getElementById('cookie_consent_container');
+  if (cookiePreferences != 'true') {
+    openCookiePreferences();
+    console.log('No Cookie Preferences yet...');
+    console.log('Please set Cookie Preferences...');
+  } else {
+    loadCookies();
+    console.log('Cookie Preferences loaded...');
+  }
+
+
+
+  function openCookiePreferences() {
+    CookieConsentOverlay.classList.remove('cookie_hide');
+    CookieConsentOverlay.classList.add('cookie_show_overlay');
+
+    //If nothing is checked
+    var TrackingCookiesCheckbox = document.getElementById('tracking_cookies');
+    if (TrackingCookiesCheckbox.checked) {
+      createCookie('trackingCookies', 'true', 14);
+    }
+  }
+
+  //Cookies Consent Screen Buttons
+  var Settings = document.getElementById('cookie_pop_up_settings');
+  var General = document.getElementById('cookie_pop_up');
+  var MoreInfo = document.getElementById('cookies_more_info');
+  var TrackingCookiesCheckbox = document.getElementById('tracking_cookies');
+  MoreInfo.addEventListener('click', function () {
+    General.classList.add('cookie_hide');
+    Settings.classList.remove('cookie_hide');
+    Settings.classList.add('cookie_show');
+    console.log('Opened Cookie Settings');
+  });
+
+  //Validate Checkbox of Tracking Cookies
+  function validateTrackingCookies() {
+    if (TrackingCookiesCheckbox.checked) {
+      console.log('Tracking Cookies selected');
+      createCookie('trackingCookies', 'true', 14);
+    } else {
+      console.log('Deselected Tracking Cookies');
+      createCookie('trackingCookies', 'false', 14);
+    }
+  }
+
+  //Save Cookie Settings
+  var AcceptButton = document.getElementById('accept_cookie_settings');
+  var SaveButton = document.getElementById('save_cookie_settings');
+  var CookieConsentOverlay = document.getElementById('cookie_consent_container');
+  AcceptButton.addEventListener('click', function () {
+    CookieConsentOverlay.classList.add('cookie_hide');
+    createCookie('cookiePreferences', 'true', 14);
+    console.log('Accepted Cookie Usage');
+    loadCookies();
+  });
+
+  SaveButton.addEventListener('click', function () {
+    CookieConsentOverlay.classList.add('cookie_hide');
+    createCookie('cookiePreferences', 'true', 14);
+    console.log('Saved Cookie Settings');
+    loadCookies();
+  });
+
+  /**********************************************************/
+  /*                    Cookie Functions                    */
+  /**********************************************************/
+
+  //GA Function
+  function activateGoogleAnalytics() {
+    //GA Code
+    console.log('Google Analytics loaded successfully...');
+  }
+
+  /**********************************************************/
+  /*                   Cookie Categories                    */
+  /**********************************************************/
+
+  //Tracking Cookies
+  function TrackingCookies() {
+    var trackingCookies = readCookie('trackingCookies');
+    switch (trackingCookies) {
+      case 'true':
+        //Google Analytics
+        activateGoogleAnalytics();
+        console.log('Tracking Cookies loaded successfully...');
+        break;
+      case 'false':
+        console.log('Tracking Cookies not loaded... (not selected)');
+        break;
+    }
+  }
+
+  //Load Accepted Cookies
+  function loadCookies() {
+    TrackingCookies();
+  }
+
+  /*
+  //Delete Cookies (Dev only)
+  eraseCookie('cookiePreferences');
+  eraseCookie('trackingCookies');
+  */
+</script>
 
 </html>

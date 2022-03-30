@@ -490,3 +490,297 @@ table a, #comments a{background-color:inherit;}
 	.font-x2{font-size:1.6rem;}
 	.font-x3{font-size:1.8rem;}
 }
+
+body {
+	font-family: Georgia, serif;
+	background: #eee;
+	font-size: 16px;
+	}
+	
+	#footer-cookie,
+	#footer-cookie * {
+	box-sizing: border-box;
+	}
+	
+	#footer-cookie {
+		display: none;
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 60px;
+		padding-left: 30px;
+		padding-right: 30px;
+		line-height: 60px;
+		background: #303030;
+		color: #fff;
+		z-index: 100;
+	}
+	
+	@import url("https://use.typekit.net/mga3rlv.css");
+
+html, body {
+  font-family: europa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons */
+.button_1 {
+    background-color: #828BF4;
+    font-size: 18px;
+    line-height: 46px;
+    font-weight: 500;
+    text-align: center;
+    width: 190px;
+    height: 48px;
+    border-radius: 2000px;
+    color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}
+
+.button_1:hover {
+    background-color: #0f99ff;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 2px 7px 10px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 2px 7px 10px -2px;
+    cursor: pointer;
+    -webkit-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}
+
+.link_b1 {
+    display: block;
+    border-radius: 2000px;
+    width: 190px;
+    text-decoration: none;
+}
+.service_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 5em 0 0 0;
+}
+/* Page Content */
+.page_content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_content h2 {
+  text-align: center;
+}
+
+.page_content .service_button {
+  margin: 2em 0 0 0;
+}
+
+/* Cookie Consent */
+.cookie_consent_container {
+    background: rgba(3, 31, 50, .95);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    overflow-y: scroll;
+    animation: fadeIn 200ms ease-in;
+    -webkit-animation: fadeIn 200ms ease-in;
+
+    /* Toggle Cookie Consent visible or not*/
+    display: flex;
+}
+
+.cookie_consent_box {
+    background: #fff;
+    border-radius: .25em;
+    padding: 2em 2.5em;
+    max-width: 32em;
+    width: 75%;
+    animation: fadeIn 150ms ease-in;
+    -webkit-animation: fadeIn 150ms ease-in;
+}
+
+.cookie_consent_box h2 {
+    font-size: 20px;
+}
+
+.cookie_consent_box h2, .cookie_consent_box p, .cookie_consent_box a {
+    color: #596770;
+}
+
+.cookie_consent_box p, .cookie_consent_box a {
+    font-size: 14px;
+}
+
+.cookie_more_info {
+    text-decoration: underline;
+}
+
+.cookie_consent_box p {
+    margin: 1.5em 0 0 0;
+}
+
+.cookie_more_info:hover {
+    cursor: pointer;
+}
+
+.cookie_consent_box a:hover {
+    color: #090e11;
+}
+
+.cookie_pop_up_buttons .service_button {
+    display: block;
+    margin: 0 0 0 3em;
+}
+
+.cookie_pop_up_buttons {
+    margin: 3em 0 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.cookie_type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1.5em 0 0 0;
+}
+
+.cookie_type_text {
+    margin: 0 0 0 1em;
+}
+
+.cookies_always_checked {
+    height: 1.5em;
+    width: 1.5em;
+    background: url("https://mavorymedia.com/wp-content/uploads/2018/09/always_checked.svg") no-repeat center center;
+    background-size: 75%;
+}
+
+.cookie_checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    font-size: 16px;
+    height: 1.5em;
+    width: 1.5em;
+    background: none;
+    border-radius: .25em;
+    border: 1px solid #828BF4;
+    cursor: pointer;
+    background: none;
+    margin: 0;
+    transition: background 150ms cubic-bezier(0.25, 0.1, 0.04, 1.54);
+}
+
+.cookie_checkbox:focus {
+    outline: none;
+}
+
+.cookie_checkbox:checked {
+    background: url("https://mavorymedia.com/wp-content/uploads/2018/09/checkbox.svg") no-repeat center center, #0f94ef;
+    background-size: 75%;
+    transition: background 150ms cubic-bezier(0.25, 0.1, 0.04, 1.54);
+}
+
+.cookie_type_text label, .cookie_type_text h3 {
+    font-size: 20px;
+    color: #828BF4;
+    font-weight: bold;
+}
+
+.cookie_type_text h3 {
+    margin: 0;
+}
+
+.cookie_type_text label {
+    cursor: pointer;
+}
+
+.cookie_type_text p {
+    font-size: 14px;
+    margin: .25em 0 0 0;
+}
+
+.cookie_pop_up_settings .service_button {
+    margin: 3em 0 1em 0;
+}
+
+/* Cookie Toggle between General and Settings */
+.cookie_show {
+    display: block;
+}
+
+.cookie_show_overlay {
+    display: flex;
+}
+
+.cookie_hide {
+    display: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 540px) {
+    .cookie_consent_box {
+        padding: 1.5em 1.5em;
+    }
+
+    .cookie_pop_up_buttons {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .cookie_pop_up_buttons .service_button {
+        margin: 1.5em 0 0 0;
+    }
+
+    .cookie_consent_box p, .cookie_consent_box a {
+        font-size: 12px;
+    }
+
+    .cookie_type_text label, .cookie_type_text h3 {
+        font-size: 16px;
+    }
+
+    .cookies_always_checked , .cookie_checkbox {
+        height: 1em;
+        width: 1em;
+        margin: .15em 0 0 0;
+    }
+    .cookie_type_text p {
+        padding: 0 1.5em 0 0;
+    }
+}
