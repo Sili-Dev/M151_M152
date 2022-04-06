@@ -750,6 +750,10 @@ html, body {
     display: none;
 }
 
+.icon {
+    transform: scale(0.5);
+}
+
 /* Mobile */
 @media screen and (max-width: 540px) {
     .cookie_consent_box {
