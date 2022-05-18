@@ -789,6 +789,12 @@ html, body {
     }
 }
 
+canvas {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
 .text {
     animation: text 4s infinite alternate;
     position: relative;
