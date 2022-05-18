@@ -754,6 +754,18 @@ html, body {
     transform: scale(0.5);
 }
 
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 /* Mobile */
 @media screen and (max-width: 540px) {
     .cookie_consent_box {
